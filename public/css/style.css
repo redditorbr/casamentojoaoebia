@@ -216,6 +216,45 @@ main {
    letter-spacing: 0.06em;
 }
 
+/* ---------- COUNTDOWN ---------- */
+
+.countdown{
+   display: flex;
+   justify-content: center;
+   gap: 14px;
+   margin: 26px auto 0;
+}
+
+.cd-box{
+   background: var(--card);
+   border: 1px solid var(--line);
+   border-radius: 4px;
+   padding: 14px 10px 10px;
+   min-width: 74px;
+   text-align: center;
+}
+
+.cd-num{
+   display: block;
+   font-family: 'Fraunces', serif;
+   font-weight: 700;
+   font-size: 30px;
+   line-height: 1;
+   color: var(--maroon-deep);
+   font-variant-numeric: tabular-nums;
+}
+
+.cd-label{
+   display: block;
+   margin-top: 6px;
+   font-family: 'Fraunces', serif;
+   font-size: 12px;
+   font-weight: 600;
+   letter-spacing: 0.1em;
+   text-transform: uppercase;
+   color: var(--maroon);
+}
+
 /* ---------- DETAILS ---------- */
 
 .details ul {
@@ -572,6 +611,18 @@ footer {
       font-size: 90px;
    }
 
+   .countdown{
+      gap: 10px;
+   }
+
+   .cd-box{
+      padding: 12px 8px 8px;
+   }
+
+   .cd-num{
+      font-size: 28px;
+   }
+
    .details ul li {
       padding: 22px;
    }
@@ -623,6 +674,14 @@ footer {
    .toast-message button img {
       width: 20px;
       height: 20px;
+   }
+
+   .countdown{
+      flex-wrap: wrap;
+   }
+
+   .cd-num{
+      font-size: 26px;
    }
 
    .gift-panel-inner {

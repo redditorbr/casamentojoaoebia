@@ -1,6 +1,39 @@
 import { validateEmail, validateGift } from "./validation.js"
 import { formatCurrency } from "./currency.js"
 
+/* ---------- COUNTDOWN ---------- */
+const weddingDate = new Date('2026-11-22T15:00:00-03:00');
+
+function pad(n){
+   return String(n).padStart(2, '0')
+}
+
+function updateCountdown(){
+   const now = new Date();
+   let diff = weddingDate - now;
+
+   if (diff <= 0) {
+   document.getElementById('cd-days').textContent = '00';
+   document.getElementById('cd-hours').textContent = '00';
+   document.getElementById('cd-mins').textContent = '00';
+   document.getElementById('cd-secs').textContent = '00';
+   return;
+   }
+
+   const days = Math.floor(diff / 86400000);
+   const hours = Math.floor((diff % 86400000) / 3600000);
+   const mins = Math.floor((diff % 3600000) / 60000);
+   const secs = Math.floor((diff % 60000) / 1000);
+
+   document.getElementById('cd-days').textContent = pad(days);
+   document.getElementById('cd-hours').textContent = pad(hours);
+   document.getElementById('cd-mins').textContent = pad(mins);
+   document.getElementById('cd-secs').textContent = pad(secs);
+}
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
+
 const giftPrices = document.querySelectorAll(".gift-prices li button")
 const giftPanel = document.querySelector(".gift-panel")
 const emailForm = document.querySelector(".email-step")
